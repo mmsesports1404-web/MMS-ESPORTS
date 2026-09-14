@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMS ESPORT - Joki Rank MLBB</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background-color: #0b0c10; color: #fff; line-height: 1.6; }
+        header { background: #1f2833; padding: 15px 5%; display: flex; align-items: center; gap: 12px; border-bottom: 2px solid #d4af37; }
+        header img { height: 45px; }
+        header div { font-size: 20px; font-weight: bold; color: #d4af37; }
+        .hero { text-align: center; padding: 40px 20px; background: #14171d; }
+        .hero h1 { font-size: 26px; color: #d4af37; margin-bottom: 8px; }
+        .container { max-width: 900px; margin: 30px auto; padding: 0 15px; }
+        .title { text-align: center; margin-bottom: 25px; color: #d4af37; font-size: 22px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 15px; }
+        .card { background: #1f2833; padding: 20px; border-radius: 10px; border: 1px solid #d4af37; text-align: center; }
+        .price { font-size: 24px; color: #d4af37; font-weight: bold; margin: 10px 0; }
+        .btn { display: inline-block; background: #25d366; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; width: 100%; border: none; cursor: pointer; }
+        .form-box { background: #1f2833; padding: 25px; border-radius: 10px; margin-top: 30px; }
+        .form-group { margin-bottom: 12px; }
+        .form-group label { display: block; margin-bottom: 5px; color: #ccc; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #45a29e; background: #0b0c10; color: #fff; }
+        footer { text-align: center; padding: 20px; background: #1f2833; margin-top: 30px; font-size: 14px; color: #ccc; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.ibb.co/L8v8V8z/mms-logo.jpg" alt="Logo">
+        <div>MMS ESPORT</div>
+    </header>
+    <section class="hero">
+        <h1>Rank Sangkut? Takde Masa Nak Push?</h1>
+        <p>MMS ESPORT boleh settle kan! Pro player & pengerjaan pantas.</p>
+    </section>
+    <div class="container">
+        <h2 class="title">Price List Joki Rank (Per Star)</h2>
+        <div class="grid">
+            <div class="card"><h3>Epic</h3><div class="price">RM 2 / Star</div></div>
+            <div class="card"><h3>Legend</h3><div class="price">RM 3 / Star</div></div>
+            <div class="card"><h3>Mythic</h3><div class="price">RM 4 / Star</div></div>
+            <div class="card"><h3>Mythical Honor</h3><div class="price">RM 5 / Star</div></div>
+            <div class="card"><h3>Mythical Glory</h3><div class="price">RM 6 / Star</div></div>
+            <div class="card"><h3>Mythical Immortal</h3><div class="price">RM 7 / Star</div></div>
+        </div>
+        <div class="form-box">
+            <h2 class="title" style="font-size: 20px;">Formulir Order</h2>
+            <form onsubmit="sendWA(event)">
+                <div class="form-group"><label>User ID & Server</label><input type="text" id="uid" required placeholder="Contoh: 123456 (2001)"></div>
+                <div class="form-group"><label>Jenis Login</label><select id="login" required><option value="">-- Pilih --</option><option value="Moonton">Moonton</option><option value="VK">VK</option><option value="TikTok">TikTok</option></select></div>
+                <div class="form-group"><label>Paket Rank</label><select id="rank" required><option value="">-- Pilih Rank --</option><option value="Epic (RM2/Star)">Epic (RM 2)</option><option value="Legend (RM3/Star)">Legend (RM 3)</option><option value="Mythic (RM4/Star)">Mythic (RM 4)</option><option value="Mythical Honor (RM5/Star)">Mythical Honor (RM 5)</option><option value="Mythical Glory (RM6/Star)">Mythical Glory (RM 6)</option><option value="Mythical Immortal (RM7/Star)">Mythical Immortal (RM 7)</option></select></div>
+                <div class="form-group"><label>Jumlah Bintang</label><input type="number" id="star" min="1" required placeholder="Contoh: 5"></div>
+                <button type="submit" class="btn">Order via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+    <footer>&copy; 2026 MMS ESPORT | WA: 0178153522</footer>
+    <script>
+        function sendWA(e) {
+            e.preventDefault();
+            const msg = `Halo Admin MMS ESPORT, nak order joki:%0AID: ${document.getElementById('uid').value}%0ALogin: ${document.getElementById('login').value}%0ARank: ${document.getElementById('rank').value}%0ABintang: ${document.getElementById('star').value}`;
+            window.open(`https://wa.me/60178153522?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+  </html>
